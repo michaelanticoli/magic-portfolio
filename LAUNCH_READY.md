@@ -58,6 +58,14 @@ Your Magic Portfolio is **100% ready to deploy**. Here's what's configured:
 2. **Alternative**: Import your repo on [vercel.com](https://vercel.com)
 3. **That's it!** Your site will be live with a URL like: `https://your-portfolio.vercel.app`
 
+## 📝 Recommended: Replace Placeholder Images
+
+Before or after deploying, you should replace:
+
+1. **Avatar Image** - Replace `public/images/avatar.jpg` with your actual photo
+2. **Gallery Images** - Replace images in `public/images/gallery/` with your own
+3. **Project Images** - Optionally add specific images for each project
+
 ## 📝 Optional Post-Deployment
 
 After deploying, you may want to:
@@ -66,8 +74,7 @@ After deploying, you may want to:
 2. **Update Base URL** - In `src/resources/once-ui.config.ts` (line 18)
 3. **Add Calendar Link** - Update Cal.com link in `src/resources/content.tsx` (line 105)
 4. **Newsletter Setup** - Configure Mailchimp in `src/resources/once-ui.config.ts` (line 144)
-5. **Replace Gallery Images** - Add your own images to `public/images/gallery/`
-6. **Create Real Blog Posts** - Current posts are documentation templates
+5. **Create Real Blog Posts** - Current posts are documentation templates
 
 ## 📊 What You Get
 
