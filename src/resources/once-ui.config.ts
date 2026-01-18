@@ -27,6 +27,9 @@ const normalizeBaseUrl = (url: string): string => {
 };
 
 const baseURL: string = normalizeBaseUrl(rawBaseURL);
+// The baseURL will be set by the deployment platform (e.g., Vercel auto-generated domain)
+// Update this after deployment if using a custom domain
+const baseURL: string = "";
 
 const routes: RoutesConfig = {
   "/": true,
@@ -45,7 +48,7 @@ const display: DisplayConfig = {
 // Enable password protection on selected routes
 // Set password in the .env file, refer to .env.example
 const protectedRoutes: ProtectedRoutesConfig = {
-  "/work/automate-design-handovers-with-a-figma-to-code-pipeline": true,
+  // No routes are currently password protected
 };
 
 // Import and set font for each variant
