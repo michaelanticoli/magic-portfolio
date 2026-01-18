@@ -14,7 +14,19 @@ import {
 import { home } from "./index";
 
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL: string = "https://michaelanticoli.com";
+const rawBaseURL: string = "https://michaelanticoli.com";
+
+// Always return an absolute URL; default to https:// if the user forgets the protocol
+const normalizeBaseUrl = (url: string): string => {
+  const ensuredProtocol = /^https?:\/\//i.test(url) ? url : `https://${url}`;
+  try {
+    return new URL(ensuredProtocol).origin;
+  } catch {
+    return ensuredProtocol;
+  }
+};
+
+const baseURL: string = normalizeBaseUrl(rawBaseURL);
 
 const routes: RoutesConfig = {
   "/": true,
