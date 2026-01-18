@@ -13,6 +13,20 @@ import {
 } from "@/types";
 import { home } from "./index";
 
+// IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
+const rawBaseURL: string = "https://michaelanticoli.com";
+
+// Always return an absolute URL; default to https:// if the user forgets the protocol
+const normalizeBaseUrl = (url: string): string => {
+  const ensuredProtocol = /^https?:\/\//i.test(url) ? url : `https://${url}`;
+  try {
+    return new URL(ensuredProtocol).origin;
+  } catch {
+    return ensuredProtocol;
+  }
+};
+
+const baseURL: string = normalizeBaseUrl(rawBaseURL);
 // The baseURL will be set by the deployment platform (e.g., Vercel auto-generated domain)
 // Update this after deployment if using a custom domain
 const baseURL: string = "";
@@ -198,7 +212,6 @@ const schema: SchemaConfig = {
 const sameAs: SameAsConfig = {
   instagram: "https://instagram.com/quantumelodies",
   linkedin: "https://www.linkedin.com/in/michael-anticoli",
-  github: "https://github.com/michaelanticoli",
 };
 
 // social sharing configuration for blog posts
